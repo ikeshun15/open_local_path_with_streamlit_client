@@ -3,7 +3,7 @@ Please use with a [streamlit server](https://github.com/ikeshun15/open_local_pat
 
 ## Create environment and executable file (Miniconda)
 ```bash
-conda create --name python311_open_local_path_with_streamlit_server python=3.11
+conda create --name python311_open_local_path_with_streamlit_client python=3.11
 ```
 
 ```bash
