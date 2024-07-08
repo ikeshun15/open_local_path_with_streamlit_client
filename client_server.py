@@ -1,22 +1,10 @@
 from flask import Flask, request, jsonify
 import os
 import logging
-import socket
 
 logging.basicConfig(level=logging.DEBUG)
 
 app = Flask(__name__)
-
-def get_ip():
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    try:
-        s.connect(('10.0.0.1', 1))
-        ip = s.getsockname()[0]
-    except Exception:
-        ip = '127.0.0.1'
-    finally:
-        s.close()
-    return ip
 
 @app.route('/open_file', methods=['POST'])
 def open_file():
@@ -45,4 +33,4 @@ def open_file():
         return jsonify({"error": "Internal Server Error"}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=55000)
+    app.run(host='0.0.0.0', port=60000)
